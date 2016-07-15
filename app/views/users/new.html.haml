@@ -5,14 +5,7 @@
 
 = form_for @user, html: {class: "navbar-form full-width"} do |f|
 
--# do we need this error if clause?  I don't think so, I wrote essentially the same thing lines 2-4  -Mikey
 
-  -# - if @user.errors.any?
-  -#   %div.error_messages
-  -#     %h2 Form is invalid
-  -#     %ul
-  -#       - @user.errors.full_messages.each do |message|
-  -#         %li= message
 
   = f.label :email, 'Email:'
   = f.text_field :email, class: "form-control"
