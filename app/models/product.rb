@@ -7,5 +7,6 @@ class Product < ActiveRecord::Base
   validates :category_id, presence: true
 
   belongs_to :category
-  # has_many :categories
+  has_many :orders
+  has_many :users, through: :orders
 end

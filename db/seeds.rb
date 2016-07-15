@@ -15,3 +15,5 @@ Product.create("name":"Jake","description":"from a state farm","image":"https://
 Product.create("name":"Steve","description":"he's IS the best...","image":"http://www.petscorner.co.uk/petopedia/wp-content/uploads/syrian-hamster-4.jpg","price":0.99,"quantity":1000, category_id: 1)
 Product.create("name":"Charles","description":"in charge","image":"http://www.petwebsite.com/hamsters/hamsters_images/hamster_000002566309.jpg","price":100.11,"quantity":1, category_id: 1)
 Product.create(name: "Joey", description: "fire breathin madness", image: "http://i.imgur.com/B3DzEaG.jpg?1", price: 89999.99, quantity: 1, category_id:2)
+
+Order.create("user_id": 1, "product_id": 1, "purchased": true, "quantity": 1, "order_price": 20.99)
