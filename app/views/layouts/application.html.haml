@@ -27,7 +27,7 @@
               .form-group
                 =text_field_tag "Email", "Email",  class: "form-control"
               .form-group
-                =password_field_tag "Password", "Password", class: "form-control"
+                =password_field_tag "Password", nil, placeholder: "Password", class: "form-control"
               .form-group
                 =submit_tag "Login", class: "btn btn-warning"
               .form-group
