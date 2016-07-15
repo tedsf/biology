@@ -2,7 +2,7 @@
   =link_to "Home", root_path, {class: "btn btn-info"}
 
 -if @product != nil
-  .col-md-12
+  .col-md-4
     #item
       #li
         %h3
@@ -11,17 +11,6 @@
       #li
         %strong Price:
         #span= number_to_currency(@product.price)
-      #li
-        %strong Description:
-        #span= @product.description
-      #li
-        %strong Quantity:
-        #span= @product.quantity
-      #li
-        %strong Category:
-        #span
-        - @product.categories.each do |category|
-          = category.name
 
 - if @products != nil
   -@products.each do |p|
@@ -34,14 +23,3 @@
         #li
           %strong Price:
           #span= number_to_currency(p.price)
-        #li
-          %strong Description:
-          #span= p.description
-        #li
-          %strong Quantity:
-          #span= p.quantity
-        #li
-          %strong Category:
-          #span
-          - p.categories.each do |category|
-            = category.name

@@ -6,6 +6,6 @@ class Product < ActiveRecord::Base
   validates :quantity, presence: true
   validates :category_id, presence: true
 
-  has_many :categories_products
-  has_many :categories, through: :categories_products
+  belongs_to :category
+  # has_many :categories
 end
