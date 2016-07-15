@@ -2,7 +2,7 @@
 %html{lang: "en"}
   %head
     %meta{charset: "utf-8"}
-      %meta{content: "IE=edge", "http-equiv": "X-UA-Compatible"}
+      %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}
         %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
           %meta{content: "", name: "description"}
             %meta{content: "", name: "author"}
@@ -22,6 +22,11 @@
             =form_tag('/sessions/' + x, method: "DELETE", class: "navbar-form navbar-right") do
               .form-group
                 =submit_tag "Logout", class: "btn btn-warning"
+            - if current_user && (current_user.admin == true)
+              -x = current_user.id.to_s
+              =form_tag('/admin', class: "navbar-form navbar-right") do
+                .form-group
+                  =submit_tag "Admin", class: "btn btn-warning"
           - else
             =form_tag('/sessions', method: "POST", class: "navbar-form navbar-right") do
               .form-group
