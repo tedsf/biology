@@ -10,7 +10,8 @@ class UsersController < ApplicationController
       redirect_to root_path
       SignupMailer.welcome_email(@user).deliver
     else
-      flash[:danger] = @user.errors.full_messages.each { |error| error }.join(', ')
+      flash[:danger] = @user.errors.full_messages
+
       redirect_to new_user_path
     end
   end
