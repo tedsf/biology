@@ -19,9 +19,7 @@
         #span= @product.quantity
       #li
         %strong Category:
-        #span
-        - @product.categories.each do |category|
-          = category.name
+        #span= Category.find(@product.category_id).name
 
 - if @products != nil
   -@products.each do |p|
@@ -42,6 +40,4 @@
           #span= p.quantity
         #li
           %strong Category:
-          #span
-          - p.categories.each do |category|
-            = category.name
+          #span= Category.find(p.category_id).name
