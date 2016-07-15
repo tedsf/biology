@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to root_path
       SignupMailer.welcome_email(@user).deliver
     else
-      flash[:danger] = 'username or email already taken'
+      flash[:danger] = @user.errors.full_messages[0]
       redirect_to new_user_path
     end
   end
