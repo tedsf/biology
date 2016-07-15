@@ -28,3 +28,5 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
 end
+
+ruby '2.2.5'
