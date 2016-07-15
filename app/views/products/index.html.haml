@@ -1,3 +1,6 @@
+-if current_user && current_user.admin
+  %a{:href => "/admin"} Clicke here to Ad-min!
+
 -if flash[:success]
   .alert.alert-info
     %p= flash[:success]
