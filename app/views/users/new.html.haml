@@ -7,14 +7,6 @@
 
 = form_for @user, html: {class: "navbar-form full-width"} do |f|
 
-  -# - if @user.errors.any?
-  -#   %div.error_messages
-  -#     %h2 Form is invalid
-  -#     %ul
-  -#       - @user.errors.full_messages.each do |message|
-  -#         %li= message
-
-
   = f.label :email, 'Email:'
   = f.text_field :email, class: "form-control"
   %br
@@ -25,6 +17,10 @@
 
   = f.label :password, 'Password:'
   = f.text_field :password, class: "form-control", type: "password"
+  %br
+
+  = f.label :password_confirmation, 'Confirm Password:'
+  = f.text_field :password_confirmation, class: "form-control", type: "password"
   %br
 
   = f.submit 'Sign Up', class: "btn btn-warning"
