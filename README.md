@@ -10,7 +10,7 @@ URL: https://bullzeye.herokuapp.com/
 
 ### SCHEMA
 
-<img src="http://i.imgur.com/SkiyIsV.png" alt="schema" width="300" height="300">
+-![Schema](./schema.png)
 
 ### MVP Iteration 1
 - Client can view products :heavy_check_mark:
