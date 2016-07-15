@@ -22,13 +22,4 @@
       #li
         %strong Price:
         #span= number_to_currency(p.price)
-      #li
-        %strong Description:
-        #span= p.description
-      #li
-        %strong Quantity:
-        #span= p.quantity
-      #li
-        %strong Category:
-        #span= Category.find(p.category_id).name
 
