@@ -6,9 +6,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      flash[:success] = 'to complete sign-up, check your email for confirmation'
       redirect_to root_path
       SignupMailer.welcome_email(@user).deliver
     else
+      flash[:danger] = @user.errors.full_messages
+
       redirect_to new_user_path
     end
   end

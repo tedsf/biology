@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
         flash[:success] = "You're logged in!"
         redirect_to root_path
       else
+        flash[:danger] = "username or password not recognized"
         redirect_to root_path
       end
   end
