@@ -38,10 +38,6 @@
       .container
         %h1
           %a{href: "/"} BULLZEYE!
-    %div.flash
-      - flash.each do |message_type, message|
-        %p= message_type
-        %p= message
     .container
       .row
         = yield

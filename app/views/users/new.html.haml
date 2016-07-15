@@ -1,18 +1,13 @@
-%div.flash
-  - flash.each do |message_type, message|
-    %p= message_type
-    %p= message
+-if flash[:success]
+  .alert.alert-info
+    %p= flash[:success]
+-elsif flash[:danger]
+  .alert.alert-danger
+    %p
+      - flash[:danger].each do |error|
+        %p= error
 
 = form_for @user, html: {class: "navbar-form full-width"} do |f|
-
--# do we need this error if clause?  I don't think so, I wrote essentially the same thing lines 2-4  -Mikey
-
-  -# - if @user.errors.any?
-  -#   %div.error_messages
-  -#     %h2 Form is invalid
-  -#     %ul
-  -#       - @user.errors.full_messages.each do |message|
-  -#         %li= message
 
   = f.label :email, 'Email:'
   = f.text_field :email, class: "form-control"
@@ -24,6 +19,10 @@
 
   = f.label :password, 'Password:'
   = f.text_field :password, class: "form-control", type: "password"
+  %br
+
+  = f.label :password_confirmation, 'Confirm Password:'
+  = f.text_field :password_confirmation, class: "form-control", type: "password"
   %br
 
   = f.submit 'Sign Up', class: "btn btn-warning"
