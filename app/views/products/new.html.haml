@@ -1,2 +1,5 @@
-= render partial:'productinfo'
+- if current_user && current_user.admin
+  = render partial:'productinfo'
+- else
+  You need admin powers to view this page
 

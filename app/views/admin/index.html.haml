@@ -1,4 +1,9 @@
 - if current_user && current_user.admin
-  hello
+  %a{:href => "products/new"} New Product
+  %br
+  - @product.each do |p|
+    %span= p.name
+    %a{:href => "products/#{p.id}/edit"} Edit
+    %br
 - else
   You need admin powers to view this page
