@@ -1,5 +1,5 @@
-## Slamazon
-URL: https://slamazon.herokuapp.com/
+## Bullzeye
+URL: https://bullzeye.herokuapp.com/
 
 ## Description
 - Rails-based Online Shop

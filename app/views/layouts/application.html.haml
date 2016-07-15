@@ -8,14 +8,14 @@
             %meta{content: "", name: "author"}
               %link{href: "../../favicon.ico", rel: "icon"}
               %link{href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", rel: "stylesheet"}
-                %title SLAMAZON!
+                %title BULLZEYE!
                 = stylesheet_link_tag 'application', media: 'all'
                 = csrf_meta_tags
   %body
     %nav.navbar.navbar-inverse.navbar-fixed-top
       .container
         .navbar-header
-          %a.navbar-brand{href: "/"} SLAMAZON
+          %a.navbar-brand{href: "/"} BULLZEYE
         #navbar.navbar-collapse.collapse
           - if current_user
             -x = current_user.id.to_s
@@ -37,13 +37,13 @@
     .jumbotron
       .container
         %h1
-          %a{href: "/"} SLAMAZON!
+          %a{href: "/"} BULLZEYE!
     .container
       .row
         = yield
       %hr
         %footer
-          %p &copy; 2016 SLAMAZON!, Inc.
+          %p &copy; 2016 BULLZEYE!, Inc.
     / Placed at the end of the document so the pages load faster
     -# %script{src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"}
     -# :javascript
