@@ -18,6 +18,8 @@
   #span= @product.quantity
 
 - if current_user
-  %a{:href => "/users/#{current_user.id}/orders/new", class: "btn btn-warning", :style => "display: block; width: 150px;"} Add to cart
--# =button_to "Delete", {id: @product.id }, method: :delete, action: :destroy, data: { confirm: "Are you sure?" }
+  =form_tag("/users/#{current_user.id}/orders", method: "POST", class: "navbar-form navbar-right") do
+    =hidden_field :product_id, @product.id
+    =submit_tag "Add to cart", class: "btn btn-warning"
+
 
