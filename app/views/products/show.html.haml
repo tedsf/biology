@@ -13,6 +13,6 @@
 #li
   %strong Quantity:
 #span= @product.quantity
-.btn.btn-success=link_to "add to cart", ""
+%a{:href => "/users/#{current_user.id}/orders/new", class: "btn btn-warning"} Add to cart
 -# =button_to "Delete", {id: @product.id }, method: :delete, action: :destroy, data: { confirm: "Are you sure?" }
 
