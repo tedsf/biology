@@ -1,6 +1,6 @@
-User.destroy_all
-Category.destroy_all
-Product.destroy_all
+# User.destroy_all
+# Category.destroy_all
+# Product.destroy_all
 
 User.create("username":"Tom", "email":"tom@tom.com", "password":"tomtom", "admin": false)
 User.create("username":"Tim", "email":"tim@tim.com", "password":"timtim", "admin": true)
@@ -16,9 +16,9 @@ Product.create("name":"Steve","description":"he's IS the best...","image":"http:
 Product.create("name":"Charles","description":"in charge","image":"http://www.petwebsite.com/hamsters/hamsters_images/hamster_000002566309.jpg","price":100.11,"quantity":1, category_id: 1)
 Product.create(name: "Joey", description: "fire breathin madness", image: "http://i.imgur.com/B3DzEaG.jpg?1", price: 89999.99, quantity: 1, category_id:2)
 
-Order.create("user_id": 1, "product_id": 1, "purchased": true, "quantity": 1, "order_price": 20.99)
-Order.create("user_id": 1, "product_id": 2, "purchased": true, "quantity": 1, "order_price": 20.99)
-Order.create("user_id": 1, "product_id": 3, "purchased": true, "quantity": 1, "order_price": 20.99)
-Order.create("user_id": 1, "product_id": 4, "purchased": true, "quantity": 1, "order_price": 20.99)
-Order.create("user_id": 2, "product_id": 5, "purchased": true, "quantity": 1, "order_price": 20.99)
-Order.create("user_id": 2, "product_id": 7, "purchased": true, "quantity": 1, "order_price": 89999.99)
+Order.create("user_id": 1, "product_id": 1, "purchased": true, "quantity": 5)
+Order.create("user_id": 1, "product_id": 2, "purchased": true, "quantity": 1)
+Order.create("user_id": 1, "product_id": 3, "purchased": true, "quantity": 1)
+Order.create("user_id": 1, "product_id": 4, "purchased": true, "quantity": 1)
+Order.create("user_id": 2, "product_id": 5, "purchased": true, "quantity": 1)
+Order.create("user_id": 2, "product_id": 7, "purchased": true, "quantity": 1)

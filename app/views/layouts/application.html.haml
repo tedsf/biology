@@ -40,12 +40,14 @@
       .container
         %h1
           %a{href: "/", :style => "text-decoration: none;"} BULLZEYE!
+          -if current_user && current_user.admin
+            %a{:href => "/admin", class: "btn btn-warning"} Click here to view site as Admin!
     .container
       .row
         = yield
       %hr
         %footer
-          %p &copy; 2016 BULLZEYE!, Inc.
+          %p{:style => "text-align: center;"} &copy; 2016 BULLZEYE!, Inc.
     / Placed at the end of the document so the pages load faster
     -# %script{src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"}
     -# :javascript
