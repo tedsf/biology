@@ -10,7 +10,7 @@
         #span= Product.find(order.product_id).name
       #li
         %strong Price:
-        #span= order.order_price
+        #span= number_to_currency(order.order_price)
       #li
         %strong Order Date:
         #span= order.created_at
