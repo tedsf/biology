@@ -16,6 +16,8 @@
       .container
         .navbar-header
           %a.navbar-brand{href: "/"} BULLZEYE
+        %ul.nav.navbar-nav
+          %li=link_to 'cart', ""
         #navbar.navbar-collapse.collapse
           - if current_user
             -x = current_user.id.to_s
