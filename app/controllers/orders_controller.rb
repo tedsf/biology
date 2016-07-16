@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
   # Adding product to cart for real (unpurchased products)
   def create
     # FUNKY: This might not work...
-    @order = Order.new(user_id: current_user.id, product_id: params[:product_id], order_params)
+    @order = Order.new(user_id: current_user.id, product_id: params[:product_id], quantity: params[:quantity])
     if @order.save
       # AJAX magic
     else
@@ -51,9 +51,10 @@ class OrdersController < ApplicationController
     @order.destroy
   end
 
-private
-def order_params
-  params.require(:order).permit(:quantity)
-end
+# FUNKY: We're only letting the user edit quantity.
+# private
+# def order_params
+#   params.require(:order).permit(:quantity)
+# end
 
 end
