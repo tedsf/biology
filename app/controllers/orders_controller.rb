@@ -41,6 +41,7 @@ class OrdersController < ApplicationController
       @orders = Order.where(purchased: false)
       @orders.each do |order|
         order.purchased = true
+      SignupMailer.checkout_email(current_user).deliver
       end
     end
   end
