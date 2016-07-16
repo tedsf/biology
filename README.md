@@ -32,3 +32,16 @@ URL: https://bullzeye.herokuapp.com/
 - Client can view categories of products :heavy_check_mark:
 - Client can view products by category :heavy_check_mark:
 - Product show page includes categories :heavy_check_mark:
+
+### MVP Iteration 4
+- User can click button to add product to cart
+- User can view cart items via AJAX
+- User can specify the quantity of products in the cart (restricted by product stock quantity)
+- User can remove a product from the cart
+- User can see the current total price of items in their cart as items are added or removed
+- User can checkout
+- Product stock quantity is reduced by the amount purchased after checkout
+- User is redirected to a page thanking them and listing their purchases after checkout
+- User receives an email thanking them and listing their purchases after checkout
+- User cannot add product to cart if it is out of stock
+- User can view their order history
