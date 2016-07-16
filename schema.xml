@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- SQL XML created by WWW SQL Designer,
-http://code.google.com/p/wwwsqldesigner/ -->
-<!-- Active URL: https://schemadesigner.devbootcamp.com/ -->
+<!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
+<!-- Active URL: http://ondras.zarovi.cz/sql/demo/ -->
 <sql>
-  <datatypes db="mysql">
+<datatypes db="mysql">
     <group label="Numeric" color="rgb(238,238,170)">
       <type label="Integer" length="0" sql="INTEGER" re="INT" quote=""/>
       <type label="Decimal" length="1" sql="DECIMAL" re="DEC" quote=""/>
       <type label="Single precision" length="0" sql="FLOAT" quote=""/>
-      <type label="Double precision" length="0" sql="DOUBLE" re="DOUBLE"
-        quote=""/>
+      <type label="Double precision" length="0" sql="DOUBLE" re="DOUBLE" quote=""/>
       </group>
 
       <group label="Character" color="rgb(255,200,200)">
@@ -34,80 +32,93 @@ http://code.google.com/p/wwwsqldesigner/ -->
         <type label="SET" length="1" sql="SET" quote=""/>
         <type label="Bit" length="0" sql="bit" quote=""/>
       </group>
-    </datatypes><table x="463" y="244" name="products">
-    <row name="id" null="1" autoincrement="1">
-      <datatype>INTEGER</datatype>
-      <default>NULL</default></row>
-      <row name="name" null="1" autoincrement="0">
-        <datatype>VARCHAR(255)</datatype>
-        <default>NULL</default></row>
-        <row name="description" null="1" autoincrement="0">
-          <datatype>VARCHAR</datatype>
-          <default>NULL</default></row>
-          <row name="image" null="1" autoincrement="0">
-            <datatype>VARCHAR</datatype>
-            <default>NULL</default></row>
-            <row name="price" null="1" autoincrement="0">
-              <datatype>DOUBLE</datatype>
-              <default>NULL</default></row>
-              <row name="quantity" null="1" autoincrement="0">
-                <datatype>INTEGER</datatype>
-                <default>NULL</default></row>
-                <row name="timestamps" null="1" autoincrement="0">
-                  <datatype>DATE</datatype>
-                  <default>NULL</default></row>
-                  <key type="PRIMARY" name="">
-                    <part>id</part>
-                  </key>
-                </table>
-                <table x="611" y="339" name="users">
-                  <row name="id" null="1" autoincrement="1">
-                    <datatype>INTEGER</datatype>
-                    <default>NULL</default></row>
-                    <row name="username" null="1" autoincrement="0">
-                      <datatype>VARCHAR</datatype>
-                      <default>NULL</default></row>
-                      <row name="email" null="1" autoincrement="0">
-                        <datatype>VARCHAR</datatype>
-                        <default>NULL</default></row>
-                        <row name="password" null="1" autoincrement="0">
-                          <datatype>VARCHAR</datatype>
-                          <default>NULL</default></row>
-                          <row name="admin" null="1" autoincrement="0">
-                            <datatype>BINARY</datatype>
-                            <default>NULL</default></row>
-                            <row name="timestamps" null="1" autoincrement="0">
-                              <datatype>DATE</datatype>
-                              <default>NULL</default></row>
-                              <key type="PRIMARY" name="">
-                                <part>id</part>
-                              </key>
-                            </table>
-                            <table x="614" y="246" name="categories">
-                              <row name="id" null="1" autoincrement="1">
-                                <datatype>INTEGER</datatype>
-                                <default>NULL</default></row>
-                                <row name="name" null="1" autoincrement="0">
-                                  <datatype>VARCHAR</datatype>
-                                  <default>NULL</default></row>
-                                  <key type="PRIMARY" name="">
-                                    <part>id</part>
-                                  </key>
-                                </table>
-                                <table x="463" y="124" name="product_categories">
-                                  <row name="id" null="1" autoincrement="1">
-                                    <datatype>INTEGER</datatype>
-                                    <default>NULL</default></row>
-                                    <row name="category_id" null="1" autoincrement="0">
-                                      <datatype>INTEGER</datatype>
-                                      <default>NULL</default><relation table="categories" row="id" />
-                                    </row>
-                                    <row name="product_id" null="1" autoincrement="0">
-                                      <datatype>INTEGER</datatype>
-                                      <default>NULL</default><relation table="products" row="id" />
-                                    </row>
-                                    <key type="PRIMARY" name="">
-                                      <part>id</part>
-                                    </key>
-                                  </table>
-                                </sql>
+    </datatypes><table x="731" y="133" name="products">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="name" null="1" autoincrement="0">
+<datatype>VARCHAR(255)</datatype>
+<default>NULL</default></row>
+<row name="description" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="image" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="price" null="1" autoincrement="0">
+<datatype>DOUBLE</datatype>
+<default>NULL</default></row>
+<row name="quantity" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="timestamps" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="category_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="categories" row="id" />
+</row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="405" y="132" name="users">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="username" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="email" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="password" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="admin" null="1" autoincrement="0">
+<datatype>BINARY</datatype>
+<default>NULL</default></row>
+<row name="timestamps" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="866" y="324" name="categories">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="name" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="564" y="186" name="orders">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="user_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="product_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="products" row="id" />
+</row>
+<row name="purchased" null="1" autoincrement="0">
+<datatype>BINARY</datatype>
+<default>NULL</default></row>
+<row name="quantity" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="order_price" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+</sql>
