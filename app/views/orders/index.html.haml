@@ -1,0 +1,16 @@
+/ - if @user.products.nil?
+/   .alert.alert-danger
+/     %p= flash[:danger]
+
+- @orders.each do |order|
+  .col-md-4
+    #item
+      #li
+        %strong Item:
+        #span= Product.find(order.product_id).name
+      #li
+        %strong Price:
+        #span= order.order_price
+      #li
+        %strong Order Date:
+        #span= order.created_at

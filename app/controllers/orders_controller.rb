@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
+  # User's order history (purchased products)
   def index
-    # @orders = Order.where(user_id: current_user.id)
+    @orders = current_user.orders.where(purchased: true)
   end
 
 #   #this should probably use something like:
@@ -44,10 +45,10 @@ class OrdersController < ApplicationController
       #   redirect_to #????
       # else
       #   redirect_to #????
-      # 
+      #
 
       #Need a hidden field in the button to purchase to be able to hit this if statement
-      if @purchase 
+      if @purchase
         @orders = Order.where(order_params)
         @orders.each do |order|
           order.purchased = true
