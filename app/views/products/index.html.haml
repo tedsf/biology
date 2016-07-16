@@ -1,5 +1,3 @@
--if current_user && current_user.admin
-  %a{:href => "/admin"} Click here to view site as Admin!
 
 -if flash[:success]
   .alert.alert-info
@@ -22,6 +20,7 @@
       #li
         %strong Price:
         #span= number_to_currency(p.price)
+
 
 
 
