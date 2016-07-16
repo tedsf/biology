@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :products, only: [:index, :show]
-  resources :categories
+  resources :categories, only: [:show]
   resources :sessions
   resources :users
   resources :orders
