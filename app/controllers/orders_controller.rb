@@ -16,10 +16,10 @@ class OrdersController < ApplicationController
 
   # Adding product to cart for real (unpurchased products)
   def create
-    # FUNKY: This might not work...
-    @order = Order.new(user_id: current_user.id, product_id: params[:product_id], quantity: params[:quantity])
+    z = params[:product_id]
+    @order = Order.new(user_id: current_user.id, product_id: z.keys[0].to_i)
     if @order.save
-      # AJAX magic
+      redirect_to root_path
     else
       flash[:error] = 'We have no clue what you did wrong!'
     end
