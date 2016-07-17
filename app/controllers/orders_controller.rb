@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
     @orders = Order.where(purchased: false)
   end
 
-  # FUNKY: Fix order_price callback in order model.
+  # FUNKY: This action may be unnecessary
   def new
     @order = Order.new(user_id: current_user.id, product_id: params[:product_id])
   end
@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
   # Adding product to cart for real (unpurchased products)
   def create
     z = params[:product_id]
-    @order = Order.new(user_id: current_user.id, product_id: z.keys[0].to_i)
+    @order = Order.new(user_id: current_user.id, product_id: z.keys[0].to_i, quantity: params[:order][:quantity])
     if @order.save
       redirect_to root_path
     else
