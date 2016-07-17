@@ -7,5 +7,10 @@ class SignupMailer < ApplicationMailer
     @user = user
     mail(to: @user.email, subject: 'Welcome to BULLZEYE!')
   end
+
+  def checkout_email(user)
+    @user = user
+    mail(to: @user.email, subject: 'Your Recent Purchase from BULLZEYE!')
+  end
 end
 
