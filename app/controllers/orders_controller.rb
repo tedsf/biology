@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
   # User's history (purchased products)
+  include OrderHelper
+
   def index
     @orders = current_user.orders.where(purchased: true)
   end
@@ -16,12 +18,19 @@ class OrdersController < ApplicationController
 
   # Adding product to cart for real (unpurchased products)
   def create
+    # Grabs product_id from hidden form field.
     product_id = params[:product_id].keys[0].to_i
     @order = Order.new(user_id: current_user.id, product_id: product_id, quantity: params[:order][:quantity])
-    if @order.save
-      redirect_to root_path
+
+    if product_uniqueness(@order)
+      if @order.save
+        redirect_to root_path
+      else
+        flash[:danger] = @order.errors.full_messages
+        redirect_to "/products/#{product_id}"
+      end
     else
-      flash[:danger] = @order.errors.full_messages
+      flash[:danger] = ["You already have this item in your cart!  Please update the quantity there."]
       redirect_to "/products/#{product_id}"
     end
   end
