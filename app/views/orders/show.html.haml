@@ -23,3 +23,10 @@
     =form_tag("/users/#{current_user.id}/orders/#{order.id}", method: "DELETE", class: "navbar-form navbar-right") do
       .form-group
         =submit_tag "Remove from cart", class: "btn btn-warning"
+%div
+  =form_tag("1", method: "PATCH") do
+    .form-group
+      =submit_tag "Checkout", class: "btn btn-warning"
+
+
+
