@@ -39,10 +39,14 @@ class OrdersController < ApplicationController
     # Checkout button via http
     else
       @orders = Order.where(purchased: false)
+
       @orders.each do |order|
         order.purchased = true
-      SignupMailer.checkout_email(current_user).deliver
+        order.save
       end
+
+      SignupMailer.checkout_email(current_user).deliver
+      render "thank_you.html.haml"
     end
   end
 
