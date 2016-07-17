@@ -46,7 +46,8 @@ class OrdersController < ApplicationController
         order.update(purchased: true)
 
         # Update product stock quantity accordingly.
-        Product.find(order.product_id).update(quantity: (self.quantity -= order.quantity))
+        product = Product.find(order.product_id)
+        product.update(quantity: (product.quantity -= order.quantity))
       end
 
       # Email user checkout confirmation/receipt.
