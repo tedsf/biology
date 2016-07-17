@@ -38,15 +38,13 @@ class OrdersController < ApplicationController
       # AJAX magic
     # Checkout button via http
     else
-      p "*************************************"
       @orders = Order.where(purchased: false)
-      first = @orders.first
 
       @orders.each do |order|
         order.purchased = true
         order.save
       end
-      redirect_to root_path
+      render "thank_you.html.haml"
     end
   end
 

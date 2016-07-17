@@ -1,8 +1,8 @@
-- total = nil
+-# - total = nil
 
-= @orders.each do |order|
-  = order.name
+- @orders.each do |order|
+  = order.product.name
   = order.order_price
   = order.quantity
-  - total += order.order_price
-= total
+  -# - total += order.order_price
+-# = total
