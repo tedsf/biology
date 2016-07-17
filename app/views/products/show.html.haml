@@ -20,6 +20,8 @@
 - if current_user
   =form_tag("/users/#{current_user.id}/orders", method: "POST", class: "navbar-form navbar-right") do
     =hidden_field :product_id, @product.id
+    =label :order, :quantity
+    =text_field :order, :quantity
     =submit_tag "Add to cart", class: "btn btn-warning"
 
 

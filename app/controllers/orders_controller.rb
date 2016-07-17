@@ -9,19 +9,20 @@ class OrdersController < ApplicationController
     @orders = Order.where(purchased: false)
   end
 
-  # FUNKY: Fix order_price callback in order model.
+  # FUNKY: This action may be unnecessary
   def new
     @order = Order.new(user_id: current_user.id, product_id: params[:product_id])
   end
 
   # Adding product to cart for real (unpurchased products)
   def create
-    z = params[:product_id]
-    @order = Order.new(user_id: current_user.id, product_id: z.keys[0].to_i)
+    product_id = params[:product_id].keys[0].to_i
+    @order = Order.new(user_id: current_user.id, product_id: product_id, quantity: params[:order][:quantity])
     if @order.save
       redirect_to root_path
     else
-      flash[:error] = 'We have no clue what you did wrong!'
+      flash[:danger] = @order.errors.full_messages
+      redirect_to "/products/#{product_id}"
     end
   end
 
@@ -41,9 +42,17 @@ class OrdersController < ApplicationController
       @orders = Order.where(purchased: false)
 
       @orders.each do |order|
-        order.purchased = true
-        order.save
+        # Set the order to purchased.
+        order.update(purchased: true)
+
+        # Update product stock quantity accordingly.
+        product = Product.find(order.product_id)
+        product.update(quantity: (product.quantity -= order.quantity))
       end
+
+      # Email user checkout confirmation/receipt.
+      SignupMailer.checkout_email(current_user).deliver
+
       render "thank_you.html.haml"
     end
   end

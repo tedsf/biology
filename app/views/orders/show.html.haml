@@ -17,7 +17,7 @@
     #span= order.product.description
     #li
       %strong Quantity:
-    #span= order.product.quantity
+    #span= order.quantity
 
 
     =form_tag("/users/#{current_user.id}/orders/#{order.id}", method: "DELETE", class: "navbar-form navbar-right") do
