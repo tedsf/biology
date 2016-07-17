@@ -1,12 +1,3 @@
--if flash[:success]
-  .alert.alert-info
-    %p= flash[:success]
--elsif flash[:danger]
-  .alert.alert-danger
-    %p
-      - flash[:danger].each do |error|
-        %p= error
-
 = form_for @user, html: {class: "navbar-form full-width"} do |f|
 
   = f.label :email, 'Email:'

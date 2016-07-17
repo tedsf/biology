@@ -17,7 +17,8 @@
         .navbar-header
           %a.navbar-brand{href: "/"} BULLZEYE!
         %ul.nav.navbar-nav
-          %li=link_to 'Cart', "/users/#{current_user.id}/orders/1"
+          - if current_user
+            %li=link_to 'Cart', "/users/#{current_user.id}/orders/1"
         #navbar.navbar-collapse.collapse
           - if current_user
             -x = current_user.id.to_s
@@ -43,6 +44,14 @@
           -if current_user && current_user.admin
             %a{:href => "/admin", class: "btn btn-warning"} Click here to view site as Admin!
     .container
+      -if flash[:success]
+        .alert.alert-info
+          %p= flash[:success]
+      -elsif flash[:danger]
+        .alert.alert-danger
+          %p
+            - flash[:danger].each do |error|
+              %p= error
       .row
         = yield
       %hr
