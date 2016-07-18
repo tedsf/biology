@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.5'
 
 gem 'dotenv-rails', :groups => [:development, :test, :production]
 
@@ -28,5 +29,3 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
 end
-
-ruby '2.2.5'
