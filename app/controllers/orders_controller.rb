@@ -60,7 +60,7 @@ class OrdersController < ApplicationController
       end
 
       # Email user checkout confirmation/receipt.
-      SignupMailer.checkout_email(current_user).deliver
+      # SignupMailer.checkout_email(current_user).deliver
 
       render "thank_you.html.haml"
     end
