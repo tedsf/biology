@@ -5,8 +5,8 @@ require 'dotenv'
 
 Bundler.require(*Rails.groups)
 
-gmail_username = ENV['gmail_username']
-gmail_password = ENV['gmail_password']
+GMAIL_USERNAME = ENV['gmail_username']
+GMAIL_PASSWORD = ENV['gmail_password']
 
 
 module Shoppe

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = 'to complete sign-up, check your email for confirmation'
       redirect_to root_path
-      SignupMailer.welcome_email(@user).deliver
+      # SignupMailer.welcome_email(@user).deliver
     else
       flash[:danger] = @user.errors.full_messages
 
