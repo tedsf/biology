@@ -12,6 +12,10 @@ URL: https://bullzeye.herokuapp.com/
 
 -![Schema](./schema.png)
 
+### Workflow
+
+<img src='./workflow.jpg'
+
 ### MVP Iteration 1
 - Client can view products :heavy_check_mark:
 - Client can enter products :heavy_check_mark:
