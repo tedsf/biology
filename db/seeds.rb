@@ -22,3 +22,19 @@ Order.create("user_id": 1, "product_id": 3, "purchased": true, "quantity": 1)
 Order.create("user_id": 1, "product_id": 4, "purchased": true, "quantity": 1)
 Order.create("user_id": 2, "product_id": 5, "purchased": true, "quantity": 1)
 Order.create("user_id": 2, "product_id": 7, "purchased": true, "quantity": 1)
+
+5.times do Rating.create("user_id": 2, "product_id": 1, "rating": 5) end
+10.times do Rating.create("user_id": 2, "product_id": 1, "rating": 4) end
+15.times do Rating.create("user_id": 2, "product_id": 1, "rating": 4) end
+
+10.times do Rating.create("user_id": 2, "product_id": 2, "rating": 5) end
+15.times do Rating.create("user_id": 2, "product_id": 2, "rating": 4) end
+5.times do Rating.create("user_id": 2, "product_id": 2, "rating": 4) end
+
+10.times do Rating.create("user_id": 2, "product_id": 3, "rating": 5) end
+15.times do Rating.create("user_id": 2, "product_id": 3, "rating": 4) end
+5.times do Rating.create("user_id": 2, "product_id": 3, "rating": 4) end
+
+15.times do Rating.create("user_id": 2, "product_id": 3, "rating": 5) end
+10.times do Rating.create("user_id": 2, "product_id": 3, "rating": 4) end
+5.times do Rating.create("user_id": 2, "product_id": 3, "rating": 4) end

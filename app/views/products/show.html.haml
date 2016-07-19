@@ -18,7 +18,7 @@
   #span= @product.quantity
   #li
     %strong Rating:
-  #span= @rating.last.rating
+  #span= @rating.all.inspect.where(product_id = )
 
 - if current_user
   =form_tag("/users/#{current_user.id}/orders", method: "POST", class: "navbar-form navbar-right") do
