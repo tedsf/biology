@@ -9,4 +9,11 @@ class Product < ActiveRecord::Base
   belongs_to :category
   has_many :orders
   has_many :users, through: :orders
+
+
+  has_many :ratings, dependent: :destroy
+
+  def average_rating
+    ratings.average(:value)
+  end
 end

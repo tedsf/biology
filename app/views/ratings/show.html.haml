@@ -2,7 +2,7 @@
 #li
   %h3
     %strong
-      #span= @product.name
+      #span= @ratin.name
 %div{:style => "display: inline-block;"}=image_tag("#{@product.image}")
 %div.prod{ :style => "display: inline-block; margin-top: -35px;"}
   %br
@@ -16,9 +16,6 @@
   #li
     %strong Quantity:
   #span= @product.quantity
-  #li
-    %strong Rating:
-  #span= @rating.last.rating
 
 - if current_user
   =form_tag("/users/#{current_user.id}/orders", method: "POST", class: "navbar-form navbar-right") do
@@ -26,5 +23,6 @@
     =label :order, :quantity
     =text_field :order, :quantity
     =submit_tag "Add to cart", class: "btn btn-warning"
+
 
 
