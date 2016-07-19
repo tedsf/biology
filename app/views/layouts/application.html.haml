@@ -2,20 +2,23 @@
 %html{lang: "en"}
   %head
     %meta{charset: "utf-8"}
-      %meta{content: "IE=edge", "http-equiv": "X-UA-Compatible"}
+      %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}
         %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
           %meta{content: "", name: "description"}
             %meta{content: "", name: "author"}
               %link{href: "../../favicon.ico", rel: "icon"}
               %link{href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", rel: "stylesheet"}
-                %title SLAMAZON!
+                %title BULLZEYE!
                 = stylesheet_link_tag 'application', media: 'all'
                 = csrf_meta_tags
   %body
     %nav.navbar.navbar-inverse.navbar-fixed-top
       .container
         .navbar-header
-          %a.navbar-brand{href: "/"} SLAMAZON
+          %a.navbar-brand{href: "/"} BULLZEYE!
+        %ul.nav.navbar-nav
+          - if current_user
+            %li=link_to 'Cart', "/users/#{current_user.id}/orders/1"
         #navbar.navbar-collapse.collapse
           - if current_user
             -x = current_user.id.to_s
@@ -25,9 +28,9 @@
           - else
             =form_tag('/sessions', method: "POST", class: "navbar-form navbar-right") do
               .form-group
-                =text_field_tag "Email", "Email",  class: "form-control"
+                =text_field_tag "Email", nil, placeholder: "Email",  class: "form-control"
               .form-group
-                =password_field_tag "Password", "Password", class: "form-control"
+                =password_field_tag "Password", nil, placeholder: "Password", class: "form-control"
               .form-group
                 =submit_tag "Login", class: "btn btn-warning"
               .form-group
@@ -37,13 +40,23 @@
     .jumbotron
       .container
         %h1
-          %a{href: "/"} SLAMAZON!
+          %a{href: "/", :style => "text-decoration: none;"} BULLZEYE!
+          -if current_user && current_user.admin
+            %a{:href => "/admin", class: "btn btn-warning"} Click here to view site as Admin!
     .container
+      -if flash[:success]
+        .alert.alert-info
+          %p= flash[:success]
+      -elsif flash[:danger]
+        .alert.alert-danger
+          %p
+            - flash[:danger].each do |error|
+              %p= error
       .row
         = yield
       %hr
         %footer
-          %p &copy; 2016 SLAMAZON!, Inc.
+          %p{:style => "text-align: center;"} &copy; 2016 BULLZEYE!, Inc.
     / Placed at the end of the document so the pages load faster
     -# %script{src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"}
     -# :javascript

@@ -1,4 +1,10 @@
 FactoryGirl.define do
+  factory :order do
+    
+  end
+  factory :categories_product do
+    
+  end
   factory :category do
     
   end

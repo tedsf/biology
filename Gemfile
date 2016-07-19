@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.5'
 
 gem 'dotenv-rails', :groups => [:development, :test, :production]
 
@@ -15,7 +16,7 @@ gem 'rails_admin'
 gem 'bcrypt'
 
 group :development, :test do
-  gem 'pry-rails'
+  # gem 'pry-rails'
   gem 'byebug'
   gem 'binding_of_caller'
   gem 'better_errors'

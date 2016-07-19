@@ -1,0 +1,17 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %div.email-logo
+      %img.email-logo{:src => "bullseye-hi.png"}/
+      %h1
+        BULLZEYE!
+    %h2
+      Thanks for shopping with us, #{@user.username}!
+    %p
+      We hope you enjoy all the awesome things you gave us money for!
+    %p
+      Love, The Bullzeye! Team
+    / %br
+    / = render :partial => "/orders/purchased_orders"

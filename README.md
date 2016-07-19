@@ -1,5 +1,5 @@
-## Slamazon
-URL: https://slamazon.herokuapp.com/
+## Bullzeye
+URL: https://bullzeye.herokuapp.com/
 
 ## Description
 - Rails-based Online Shop
@@ -10,7 +10,11 @@ URL: https://slamazon.herokuapp.com/
 
 ### SCHEMA
 
-<img src="http://i.imgur.com/SkiyIsV.png" alt="schema" width="300" height="300">
+-![Schema](./schema.png)
+
+### Workflow
+
+<img src='Workflow.jpg' />
 
 ### MVP Iteration 1
 - Client can view products :heavy_check_mark:
@@ -32,3 +36,17 @@ URL: https://slamazon.herokuapp.com/
 - Client can view categories of products :heavy_check_mark:
 - Client can view products by category :heavy_check_mark:
 - Product show page includes categories :heavy_check_mark:
+
+### MVP Iteration 4
+- User can click button to add product to cart :heavy_check_mark:
+- User can view cart items via AJAX
+- User can specify the quantity of products in the cart (restricted by product stock quantity) :heavy_check_mark:
+- User can remove a product from the cart :heavy_check_mark:
+- User can see the current total price of items in their cart as items are added or removed
+- User can checkout :heavy_check_mark:
+- Product stock quantity is reduced by the amount purchased after checkout :heavy_check_mark:
+- User is redirected to a page thanking them :heavy_check_mark:
+and listing their purchases after checkout
+- User receives an email thanking them and listing their purchases after checkout
+- User cannot add product to cart if it is out of stock :heavy_check_mark:
+- User can view their order history

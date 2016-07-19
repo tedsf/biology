@@ -3,20 +3,25 @@
   %h3
     %strong
       #span= @product.name
-=image_tag("#{@product.image}")
-#li
-  %strong Price:
-#span= number_to_currency(@product.price)
-#li
-  %strong Description:
-#span= @product.description
-#li
-  %strong Quantity:
-#span= @product.quantity
-#li
-  %strong Category:
-#span= @product.category.name
+%div{:style => "display: inline-block;"}=image_tag("#{@product.image}")
+%div.prod{ :style => "display: inline-block; margin-top: -35px;"}
+  %br
+  -# %div{ :style => "display: inline-block;"}
+  #li
+    %strong Price:
+  #span= number_to_currency(@product.price)
+  #li
+    %strong Description:
+  #span= @product.description
+  #li
+    %strong Quantity:
+  #span= @product.quantity
 
--# =link_to "Edit", edit_product_path(@product)
--# =button_to "Delete", {id: @product.id }, method: :delete, action: :destroy, data: { confirm: "Are you sure?" }
+- if current_user
+  =form_tag("/users/#{current_user.id}/orders", method: "POST", class: "navbar-form navbar-right") do
+    =hidden_field :product_id, @product.id
+    =label :order, :quantity
+    =text_field :order, :quantity
+    =submit_tag "Add to cart", class: "btn btn-warning"
+
 
