@@ -16,4 +16,9 @@ class Product < ActiveRecord::Base
   def average_rating
     ratings.average(:value)
   end
+
+  def positive_ratings
+    self.ratings.where("rating > ?", 3).count
+  end
+
 end

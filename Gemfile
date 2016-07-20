@@ -8,6 +8,7 @@ gem 'pg'
 
 gem 'uglifier'
 gem 'thin'
+gem 'statistics2'
 
 gem 'jquery-rails'
 gem 'haml-rails'

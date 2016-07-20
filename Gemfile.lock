@@ -226,6 +226,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    statistics2 (0.54)
     thin (1.6.4)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -265,6 +266,7 @@ DEPENDENCIES
   rspec-rails
   selenium-webdriver
   shoulda
+  statistics2
   thin
   uglifier
 
